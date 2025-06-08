@@ -1,0 +1,1121 @@
+{
+	"info": {
+		"_postman_id": "dc961afe-d9fe-4c53-88b3-92a7f977470e",
+		"name": "Requisições - Integração Sistêmica PARCEIROS SEMPARAR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45715968"
+	},
+	"item": [
+		{
+			"name": "autenticarParceiro",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<!-- Autenticar Parceiro -->\r\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <cgmp:autenticarParceiro>\r\n         <login>{{login}}</login>\r\n         <senha>{{senha}}</senha>\r\n      </cgmp:autenticarParceiro>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listaPracasPedagio",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<!-- Listar Praças -->\r\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <cgmp:listaPracasPedagio>\r\n         <sessao>{{sessao}}</sessao>\r\n      </cgmp:listaPracasPedagio>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>\r\n",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comprarViagem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<!-- Comprar Viagem -->\r\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <cgmp:comprarViagem>\r\n         <rota>ROTA_ID</rota>\r\n         <placa>PLACA</placa>\r\n         <valor>VALOR</valor>\r\n         <inicioVigencia>2025-06-08</inicioVigencia>\r\n         <fimVigencia>2025-06-09</fimVigencia>\r\n         <cnpj>CNPJ</cnpj>\r\n         <nsu>NSU</nsu>\r\n         <sessao>{{sessao}}</sessao>\r\n      </cgmp:comprarViagem>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obterReciboViagem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<!-- Obter Recibo -->\r\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <cgmp:obterReciboViagem>\r\n         <viagem>VIAGEM_ID</viagem>\r\n         <sessao>{{sessao}}</sessao>\r\n      </cgmp:obterReciboViagem>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obterCustoRota",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<!-- Obter Custo Rota -->\r\n<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n   <soapenv:Header/>\r\n   <soapenv:Body>\r\n      <cgmp:obterCustoRota>\r\n         <rota>ROTA_ID</rota>\r\n         <placa>PLACA</placa>\r\n         <nEixos>2</nEixos>\r\n         <inicioVigencia>2025-06-08</inicioVigencia>\r\n         <fimVigencia>2025-06-09</fimVigencia>\r\n         <sessao>{{sessao}}</sessao>\r\n      </cgmp:obterCustoRota>\r\n   </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "roteirizarPracasPedagio",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <cgmp:roteirizarPracasPedagio>\r\n      <pontosParada>ARRAY_PONTOS</pontosParada>\r\n      <opcoesRota>OPCOES</opcoesRota>\r\n      <sessao>{{sessao}}</sessao>\r\n    </cgmp:roteirizarPracasPedagio>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cadastrarEmbarcador",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <cgmp:cadastrarEmbarcador>\r\n      <embarcador>OBJ_EMBARCADOR</embarcador>\r\n      <sessao>{{sessao}}</sessao>\r\n    </cgmp:cadastrarEmbarcador>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listarRotas",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <cgmp:listarRotas>\r\n      <cnpj>CNPJ</cnpj>\r\n      <sessao>{{sessao}}</sessao>\r\n    </cgmp:listarRotas>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cadastrarRota",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <cgmp:cadastrarRota>\r\n      <pracas>ARRAY_PRACAS</pracas>\r\n      <nome>NOME_ROTA</nome>\r\n      <tipoIdPraca>TIPO_ID</tipoIdPraca>\r\n      <cnpj>CNPJ</cnpj>\r\n      <sessao>{{sessao}}</sessao>\r\n    </cgmp:cadastrarRota>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cadastrarRotaTemporaria",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <cgmp:cadastrarRotaTemporaria>\r\n      <pracas>ARRAY_PRACAS</pracas>\r\n      <nome>NOME_ROTA</nome>\r\n      <tipoIdPraca>TIPO_ID</tipoIdPraca>\r\n      <cnpj>CNPJ</cnpj>\r\n      <sessao>{{sessao}}</sessao>\r\n    </cgmp:cadastrarRotaTemporaria>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consultarRota",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <cgmp:consultarRota>\r\n      <rota>ROTA_ID</rota>\r\n      <cnpj>CNPJ</cnpj>\r\n      <sessao>{{sessao}}</sessao>\r\n    </cgmp:consultarRota>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "excluirRota",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <cgmp:excluirRota>\r\n      <rota>ROTA_ID</rota>\r\n      <cnpj>CNPJ</cnpj>\r\n      <sessao>{{sessao}}</sessao>\r\n    </cgmp:excluirRota>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comprarViagem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <cgmp:comprarViagem>\r\n      <rota>ROTA_ID</rota>\r\n      <placa>PLACA</placa>\r\n      <valor>VALOR</valor>\r\n      <inicioVigencia>DATA_INICIO</inicioVigencia>\r\n      <fimVigencia>DATA_FIM</fimVigencia>\r\n      <cnpj>CNPJ</cnpj>\r\n      <nsu>NSU</nsu>\r\n      <sessao>{{sessao}}</sessao>\r\n    </cgmp:comprarViagem>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "comprarViagemPorLote",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <cgmp:comprarViagemPorLote>\r\n      <viagens>ARRAY_VIAGENS</viagens>\r\n      <sessao>{{sessao}}</sessao>\r\n    </cgmp:comprarViagemPorLote>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "confirmarCompraViagem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <cgmp:confirmarCompraViagem>\r\n      <viagem>VIAGEM_ID</viagem>\r\n      <sessao>{{sessao}}</sessao>\r\n    </cgmp:confirmarCompraViagem>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "confirmarCompraViagemPorLote",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <cgmp:confirmarCompraViagemPorLote>\r\n      <viagens>ARRAY_IDS</viagens>\r\n      <sessao>{{sessao}}</sessao>\r\n    </cgmp:confirmarCompraViagemPorLote>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancelarViagem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <cgmp:cancelarViagem>\r\n      <nsuViagem>NSU</nsuViagem>\r\n      <sessao>{{sessao}}</sessao>\r\n    </cgmp:cancelarViagem>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reemitirViagem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <cgmp:reemitirViagem>\r\n      <viagem>VIAGEM_ID</viagem>\r\n      <placa>PLACA</placa>\r\n      <pracas>ARRAY_PRACAS</pracas>\r\n      <sessao>{{sessao}}</sessao>\r\n    </cgmp:reemitirViagem>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consultarStatusViagem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <cgmp:consultarStatusViagem>\r\n      <viagem>VIAGEM_ID</viagem>\r\n      <sessao>{{sessao}}</sessao>\r\n    </cgmp:consultarStatusViagem>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obterReciboViagem",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <cgmp:obterReciboViagem>\r\n      <viagem>VIAGEM_ID</viagem>\r\n      <sessao>{{sessao}}</sessao>\r\n    </cgmp:obterReciboViagem>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obterStatusVeiculo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <cgmp:obterStatusVeiculo>\r\n      <placa>PLACA</placa>\r\n      <sessao>{{sessao}}</sessao>\r\n    </cgmp:obterStatusVeiculo>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obterCustoRota",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <cgmp:obterCustoRota>\r\n      <rota>ROTA_ID</rota>\r\n      <placa>PLACA</placa>\r\n      <nEixos>2</nEixos>\r\n      <inicioVigencia>DATA_INICIO</inicioVigencia>\r\n      <fimVigencia>DATA_FIM</fimVigencia>\r\n      <sessao>{{sessao}}</sessao>\r\n    </cgmp:obterCustoRota>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "obterCustoRotaPorLote",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <cgmp:obterCustoRotaPorLote>\r\n      <custoRota>ARRAY_CUSTOS</custoRota>\r\n      <sessao>{{sessao}}</sessao>\r\n    </cgmp:obterCustoRotaPorLote>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consultaLogTransacaoPorNsu",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <cgmp:consultaLogTransacaoPorNsu>\r\n      <nsu>NSU</nsu>\r\n      <sessao>{{sessao}}</sessao>\r\n    </cgmp:consultaLogTransacaoPorNsu>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "consultaLogTransacaoPorData",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "text/xml; charset=utf-8",
+						"type": "text"
+					},
+					{
+						"key": "SOAPAction",
+						"value": "\"\"",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r\n  <soapenv:Header/>\r\n  <soapenv:Body>\r\n    <cgmp:consultaLogTransacaoPorData>\r\n      <dataInicio>DATA_INICIO</dataInicio>\r\n      <dataFim>DATA_FIM</dataFim>\r\n      <sessao>{{sessao}}</sessao>\r\n    </cgmp:consultaLogTransacaoPorData>\r\n  </soapenv:Body>\r\n</soapenv:Envelope>",
+					"options": {
+						"raw": {
+							"language": "xml"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://apphom.viafacil.com.br/wsvp/ValePedagioSTP",
+					"protocol": "https",
+					"host": [
+						"apphom",
+						"viafacil",
+						"com",
+						"br"
+					],
+					"path": [
+						"wsvp",
+						"ValePedagioSTP"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.environment.set('login', 'login');\r",
+					"pm.environment.set('senha', 'senha');\r",
+					"pm.environment.set('sessao', 1);\r",
+					"\r",
+					"// Pegue os valores das variáveis do ambiente\r",
+					"const login = pm.environment.get('login');\r",
+					"const senha = pm.environment.get('senha');\r",
+					"\r",
+					"const authBody = `\r",
+					"<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:cgmp=\"http://cgmp.com\">\r",
+					"  <soapenv:Header/>\r",
+					"  <soapenv:Body>\r",
+					"    <cgmp:autenticarParceiro>\r",
+					"      <login>${login}</login>\r",
+					"      <senha>${senha}</senha>\r",
+					"    </cgmp:autenticarParceiro>\r",
+					"  </soapenv:Body>\r",
+					"</soapenv:Envelope>\r",
+					"`;\r",
+					"\r",
+					"pm.sendRequest({\r",
+					"    url: 'https://apphom.viafacil.com.br/wsvp/ValePedagioSTP',\r",
+					"    method: 'POST',\r",
+					"    header: {\r",
+					"        'Content-Type': 'text/xml;charset=UTF-8',\r",
+					"        'SOAPAction': ''\r",
+					"    },\r",
+					"    body: {\r",
+					"        mode: 'raw',\r",
+					"        raw: authBody\r",
+					"    }\r",
+					"}, function (err, res) {\r",
+					"    if (!err) {\r",
+					"        var match = res.text().match(/<sessao[^>]*>(.*?)<\\/sessao>/);\r",
+					"        if (match && match[1]) {\r",
+					"            pm.environment.set('sessao', match[1]);\r",
+					"        }\r",
+					"    }\r",
+					"});\r",
+					"console.log(\"Sessao:\", pm.environment.get('sessao'));"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
